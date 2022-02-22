@@ -1,0 +1,83 @@
+@media (max-width:767px){
+.services{
+width: 100%;
+}
+.image__row{
+    margin: 0 17px 0 30px!important;
+}
+
+.content input[type='file']{
+        font-size: 8px;
+    }
+    .image__card{
+        padding:5px 0 ;
+    }
+    .inventory__details{
+        padding: 0;
+    }
+    .heading .design__heading {
+        font-size: 46px;
+    }
+.btn__arrow {
+    left: 0;
+    bottom: -40px;
+}
+.solution__heading {
+    font-size: 27px;
+}
+
+.section__loader {
+    margin-top: 40px;
+}
+.inventory__details .table th,
+.inventory__details .table td {
+    font-size: 10px;
+}
+@keyframes mymove{
+    from {left: 0px;}
+    to {left: 50px;}
+}
+@keyframes mysecondmove{
+    from {left: 0px;}
+    to {left: 50px;}
+}
+@keyframes mythirdmove{
+    from {left: 20px;
+}
+50%{
+    width: 10px;
+}  
+to {left: 50px;
+width: 132px;}
+}
+@keyframes myfourthmove{
+    from {left: 15px;}
+
+    75%{
+        width: 10px;
+        border-radius: 10px;
+    }
+    to {left: 50px;}
+}
+@keyframes myfifthmove{
+    from {left: 0px;}
+    to {left: 50px;}
+}
+@keyframes mysixthmove{
+    from {left: 10px}
+    to {left: 50px;}
+}
+
+}
+
+@media (min-width:768px) and (max-width:1024px){
+    .btn__open{
+        display: none;
+    }
+    .heading .design__heading {
+        font-size: 58px;
+    }
+    header .down__arrow {
+        right: 41px;
+    }
+}
