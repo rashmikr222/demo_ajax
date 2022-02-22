@@ -57,16 +57,16 @@ $(document).ready(function () {
     $("#response-text").load("demo.txt");
   });
   // ajaxError method
-  $(".req_fail").click(function () {
-    $("#response-text").load("demo1.txt");
-  });
+  // $(".req_fail").click(function () {
+  //   $("#response-text").load("demo1.txt");
+  // });
   // ajaxSend method
-  // $(document).ajaxSend(function () {
-  //   alert("AJAX request is to sent");
-  // });
-  // $("button").click(function () {
-  //   $(".text_change").load("demo.txt");
-  // });
+  $(document).ajaxSend(function () {
+    alert("AJAX request is to sent");
+  });
+  $(".req_send").click(function () {
+    $(".text_change").load("change-txt.txt");
+  });
 
   $("#driver").click(function () {
     $.ajax({
