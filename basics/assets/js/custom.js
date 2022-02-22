@@ -22,18 +22,18 @@
 // jquery
 $(document).ready(function () {
   // ajaxComplete
-  $(document).ajaxComplete(function () {
-    alert(" AJAX request completes.");
-  });
-  // ajaxSend method
-  $(document).ajaxSend(function () {
-    alert("AJAX request is to sent");
-  });
-  // ajaxError
-  $(document).ajaxError(function () {
-    alert("AJAX request fails.");
-    // console.log("AJAX request fails.");
-  });
+  // $(document).ajaxComplete(function () {
+  //   alert(" AJAX request completes.");
+  // });
+  // // ajaxSend method
+  // $(document).ajaxSend(function () {
+  //   alert("AJAX request is to sent");
+  // });
+  // // ajaxError
+  // $(document).ajaxError(function () {
+  //   alert("AJAX request fails.");
+  //   // console.log("AJAX request fails.");
+  // });
   // next button
   $(".next").click(function () {
     $.ajax({
@@ -67,32 +67,59 @@ $(document).ready(function () {
   // $("button").click(function () {
   //   $(".text_change").load("demo.txt");
   // });
-  // ajaxGet request
-  // $("#get_user").click(function (event) {
-  //   $.get(
-  //     "demo.php",
-  //     {
-  //       username: "Rashmi",
-  //     },
 
-  //     function (data) {
-  //       $("#user_display").html(data);
-  //     }
-  //   );
-  //   console.log(event.username);
-  // });
   $("#driver").click(function () {
     $.ajax({
-      url: "assets/js/getDemo.php",
+      url: "assets/php/getDemo.php",
+      // method: "GET",
       data: { userName: "Rashmi" },
       success: function (data) {
-        console.log(data);
         // Display the returned data in browser
         $("#stage").html(data);
+        console.log(data);
       },
       error: function (errorThrown) {
         alert("error");
         console.log(errorThrown);
+      },
+    });
+  });
+  // get method
+  $("#get_button").click(function () {
+    // alert("Hello world!");
+    $.get({
+      url: "assets/php/getDemo1.php",
+      success: function (data) {
+        $("#get_title").html(data);
+      },
+    });
+  });
+  // display date and time
+  $("#get_date").click(function () {
+    // alert("date and time");
+    $.get({
+      url: "assets/php/demo.php",
+      method: "GET",
+      success: function (data) {
+        $("#display_date").html(data);
+      },
+    });
+  });
+  // post method
+  $("#page_button").click(function () {
+    // alert("Hello world");
+    $.post({
+      url: "assets/php/postDemo.php",
+      data: {
+        fName: "Rashmi",
+        lname: "K R",
+      },
+      // success: function (data) {
+      //   $("#page_title").html(data);
+      // },
+      success: function (data) {
+        document.getElementById("page_title").innerHTML = data;
+        document.getElementById("page_button").innerHTML = "data passed";
       },
     });
   });
